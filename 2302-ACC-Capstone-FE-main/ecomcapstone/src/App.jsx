@@ -1,7 +1,13 @@
+// react hooks
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+// my components
 import Navbar from "./components/navbar";
+import Profile from "./pages/profile";
+import Cart from "./pages/cart";
+import Shop from "./pages/shop";
+// app
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,19 +15,17 @@ function App() {
   return (
     <>
       <div id="main-section">
-        <Router>
-          {/* NavBar */}
-          <Navbar />
-          {/* Routes */}
-          <Routes>
-            {/* Home */}
-            <Route path="/" element={<Shop />} />
-            {/* Shopping Cart */}
-            <Route path="/cart" element={<Cart />} />
-            {/* profile */}
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </Router>
+        {/* NavBar */}
+        <Navbar />
+        {/* Routes */}
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Shop />} />
+          {/* Shopping Cart */}
+          <Route path="/cart" element={<Cart />} />
+          {/* profile */}
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </div>
     </>
   );

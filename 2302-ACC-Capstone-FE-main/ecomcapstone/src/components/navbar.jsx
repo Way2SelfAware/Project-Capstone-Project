@@ -8,11 +8,11 @@ const Navbar = () => {
       {/* links */}
       <div className="links">
         {/* home */}
-        <Link to="/">Shoppe</Link>
+        <Link to="/">Shop</Link>
         {/* shopping cart page*/}
-        <Link to="/cart"></Link>
+        <Link to="/cart">Cart</Link>
         {/* user profile page */}
-        <Link to="/profile"></Link>
+        <Link to="/profile">Profile</Link>
       </div>
     </div>
   );

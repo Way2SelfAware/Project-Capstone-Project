@@ -6,6 +6,8 @@ import Navbar from "./components/navbar";
 import Profile from "./pages/profile";
 import Cart from "./pages/cart";
 import Shop from "./pages/shop";
+import Register from "./components/register";
+import Login from "./components/login";
 // app
 import "./App.css";
 

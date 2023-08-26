@@ -24,8 +24,8 @@ function App() {
           <Route path="/" element={<Shop />} />
           {/* Shopping Cart */}
           <Route path="/cart" element={<Cart />} />
-          {/* profile */}
-          <Route path="/profile" element={<User />} />
+          {/* profile/login/register */}
+          <Route path="/user" element={<User />} />
         </Routes>
       </div>
     </>

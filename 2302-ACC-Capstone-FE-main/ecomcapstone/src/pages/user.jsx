@@ -1,24 +1,30 @@
 // react hooks
-import React from "react";
+import React, { useState } from "react";
 // my components
 import Login from "../components/login";
 import Register from "../components/register";
 import Profile from "../components/profile";
 
-const Profile = () => {
+const User = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // You would typically have an authentication check here, which sets the isLoggedIn state
+
   return (
-    <>
-      <div className="user-page">
-        <h1>Login</h1>
-        {/* create conditionals for login display */}
-        <Login />
-        {/* create conditionals for registation display */}
-        <Register />
-        {/* create conditionals for profile page display */}
+    <div className="user-page">
+      <h1>User Profile</h1>
+      {isLoggedIn ? (
+        // If user is logged in, show the user profile
         <Profile />
-      </div>
-    </>
+      ) : (
+        // If user is not logged in, show login and registration forms
+        <>
+          <Login />
+          <Register />
+        </>
+      )}
+    </div>
   );
 };
 
-export default Profile;
+export default User;

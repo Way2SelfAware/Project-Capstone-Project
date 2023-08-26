@@ -13,7 +13,7 @@ const Navbar = () => {
         {/* shopping cart page*/}
         <Link to="/cart">Cart</Link>
         {/* user profile page */}
-        <Link to="/profile">Profile</Link>
+        <Link to="/user">Account Info</Link>
       </div>
     </div>
   );

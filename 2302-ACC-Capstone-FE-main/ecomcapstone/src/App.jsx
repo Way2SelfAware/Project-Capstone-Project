@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 // my components
 import Navbar from "./components/navbar";
-import Profile from "./pages/profile";
+import User from "./pages/user";
 import Cart from "./pages/cart";
 import Shop from "./pages/shop";
-import Register from "./components/register";
-import Login from "./components/login";
+
 // app
 import "./App.css";
 
@@ -26,7 +25,7 @@ function App() {
           {/* Shopping Cart */}
           <Route path="/cart" element={<Cart />} />
           {/* profile */}
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<User />} />
         </Routes>
       </div>
     </>

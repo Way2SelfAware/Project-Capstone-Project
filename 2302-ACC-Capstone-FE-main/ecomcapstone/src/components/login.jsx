@@ -21,7 +21,8 @@ const Login = () => {
       alert("Please enter both username and password");
       return;
     }
-    // API CALL location for Future Integration
+    // API CALL location for future integration
+    // add token authentication for future integration
     // reset form
     setUsername("");
     setPassword("");

@@ -5,26 +5,33 @@ import Login from "../components/login";
 import Register from "../components/register";
 import Profile from "../components/profile";
 
-const User = () => {
+const App = () => {
+  // state management
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // You would typically have an authentication check here, which sets the isLoggedIn state
+  // handle login
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+  // handle logout
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
 
   return (
     <div className="user-page">
-      <h1>User Profile</h1>
+      {/* check login status */}
       {isLoggedIn ? (
-        // If user is logged in, show the user profile
         <Profile />
       ) : (
-        // If user is not logged in, show login and registration forms
         <>
-          <Login />
-          <Register />
+          <Login onLogin={handleLogin} />
+          <Register onRegister={handleLogin} />
         </>
       )}
+      {/* log out conditional */}
+      {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
     </div>
   );
 };
 
-export default User;
+export default App;

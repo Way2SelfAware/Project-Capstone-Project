@@ -7,7 +7,6 @@ const Profile = () => {
 
   // //    fectch logic for user data will go here
   // useEffect(() => {});
-
   return (
     <>
       <div className="profile-page">

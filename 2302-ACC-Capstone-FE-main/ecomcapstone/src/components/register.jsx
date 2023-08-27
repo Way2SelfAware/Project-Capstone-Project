@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Register = () => {
+const Register = (props) => {
   // state Managment
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -46,6 +46,7 @@ const Register = () => {
     }
     // API CALL location for future integration
     // add token authentication for future integration
+
     // reset form
     setUsername("");
     setPassword("");
@@ -53,6 +54,9 @@ const Register = () => {
     setemailConfirmation("");
     setName("");
     setAddress("");
+
+    // execute registerSubmit
+    props.onRegister();
   };
 
   return (

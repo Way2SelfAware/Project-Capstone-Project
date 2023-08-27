@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Login = () => {
+const Login = (props) => {
   // state Managment
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +26,9 @@ const Login = () => {
     // reset form
     setUsername("");
     setPassword("");
+
+    // execute loginSubmit
+    props.onLogin();
   };
 
   return (

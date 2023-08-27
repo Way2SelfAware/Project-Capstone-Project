@@ -33,7 +33,6 @@ const Register = (props) => {
       username.trim() === "" ||
       password.trim() === "" ||
       email.trim() === "" ||
-      emailConfirmation.trim() === "" ||
       name.trim() === "" ||
       address.trim() === ""
     ) {

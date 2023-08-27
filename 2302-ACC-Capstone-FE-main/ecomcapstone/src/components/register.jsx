@@ -7,7 +7,6 @@ const Register = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [emailConfirmation, setemailConfirmation] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   //handle change
@@ -19,9 +18,6 @@ const Register = (props) => {
   };
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
-  };
-  const handleEmailConfirmationChange = (event) => {
-    setemailConfirmation(event.target.value);
   };
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -51,7 +47,6 @@ const Register = (props) => {
     setUsername("");
     setPassword("");
     setEmail("");
-    setemailConfirmation("");
     setName("");
     setAddress("");
 
@@ -80,12 +75,6 @@ const Register = (props) => {
             value={email}
             onChange={handleEmailChange}
             placeholder="Email"
-          />
-          <input
-            type="email"
-            value={emailConfirmation}
-            onChange={handleEmailConfirmationChange}
-            placeholder="Confirm Email"
           />
           <input
             type="text"

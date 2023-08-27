@@ -2,8 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 const Profile = () => {
-  // // state management
-  // const [user, setUser] = useState();
+  // state management
+  const [user, setUser] = useState({
+    profilePicture: "",
+    name: "",
+    email: "",
+    address: "",
+  });
 
   // //    fectch logic for user data will go here
   // useEffect(() => {});

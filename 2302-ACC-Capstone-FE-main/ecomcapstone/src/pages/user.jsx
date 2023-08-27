@@ -5,9 +5,10 @@ import Login from "../components/login";
 import Register from "../components/register";
 import Profile from "../components/profile";
 
-const App = () => {
+const User = () => {
   // state management
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   // handle login
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -15,6 +16,10 @@ const App = () => {
   // handle logout
   const handleLogout = () => {
     setIsLoggedIn(false);
+  };
+  //card flip
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -24,8 +29,18 @@ const App = () => {
         <Profile />
       ) : (
         <>
-          <Login onLogin={handleLogin} />
-          <Register onRegister={handleLogin} />
+          <div className={`card ${isFlipped ? "flipped" : ""}`}>
+            <div className="card-inner">
+              <div className="card-front">
+                <Login onLogin={handleLogin} />
+                <button onClick={handleFlip}>Switch to Register</button>
+              </div>
+              <div className="card-back">
+                <Register onRegister={handleLogin} />
+                <button onClick={handleFlip}>Switch to Login</button>
+              </div>
+            </div>
+          </div>
         </>
       )}
       {/* log out conditional */}
@@ -34,4 +49,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default User;

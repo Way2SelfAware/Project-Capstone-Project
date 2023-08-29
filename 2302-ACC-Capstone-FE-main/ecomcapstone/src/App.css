@@ -49,6 +49,7 @@
 /* 
    navbar
    shop-page
+   product-image
    cart-page
    user-page
    profile-page
@@ -60,7 +61,8 @@
    register-btn
 */
 
-/* Styles.css */
+
+/* card styles.css */
 .card {
   width: 200px;
   height: 300px;

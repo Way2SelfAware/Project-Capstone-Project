@@ -13,7 +13,7 @@ const Cart = () => {
             <li>Change the quantity of a product in my cart. </li>
             <li>Remove a product from my cart.</li>
             <li>
-              "Check out" the items in my cart, i.e., purchase the products.
+              "Checkout" the items in my cart, i.e., purchase the products.
             </li>
           </ol>
         </p>

@@ -1,6 +1,8 @@
 // react hooks
 import React from "react";
 import { useState } from "react";
+//my imports
+import "./register.css"
 
 const Register = (props) => {
   // state Managment

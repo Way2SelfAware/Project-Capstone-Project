@@ -1,6 +1,6 @@
 // Products - GET
 export const getAllProducts = "https://fakestoreapi.com/products";
-export const getSingleProduct = "https://fakestoreapi.com/products/1";
+export const getSingleProduct = `https://fakestoreapi.com/products/`;
 export const limitProducts = "https://fakestoreapi.com/products?limit=5";
 export const sortProducts = "https://fakestoreapi.com/products?sort=desc";
 export const getAllCategories = "https://fakestoreapi.com/products/categories";

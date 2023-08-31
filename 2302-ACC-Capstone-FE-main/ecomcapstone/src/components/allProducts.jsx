@@ -1,8 +1,10 @@
 //react hooks
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // my components
 import { getAllProducts } from "../API/apiEndpoints";
+import "./allProducts.css";
 
 const AllProducts = () => {
   //state management
@@ -25,21 +27,27 @@ const AllProducts = () => {
 
   return (
     <>
-      <div>
-        <h1>Product List</h1>
+      <div className="shop-title">
+        <h1>Scamazon</h1>
+      </div>
+      <div className="products">
         {allProducts.map((product) => (
-          <p key={product.id}>
-            <img
-              className="product-image"
-              src={product.image}
-              alt={product.title}
-            ></img>
-            <br />
-            {product.title}
-            <br />
-            {product.rating.rate}({product.rating.count})
-            <br />${product.price}
-          </p>
+          <Link to={`/products/${product.id}`} key={product.id}>
+            <div className="product" key={product.id}>
+              <img
+                className="product-image"
+                src={product.image}
+                alt={product.title}
+              ></img>
+              <p className="description">
+                <br />
+                <b>{product.title}</b>
+                <br />
+                {product.rating.rate}({product.rating.count})
+                <br />${product.price}
+              </p>
+            </div>
+          </Link>
         ))}
       </div>
     </>

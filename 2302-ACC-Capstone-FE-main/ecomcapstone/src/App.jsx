@@ -6,6 +6,7 @@ import Navbar from "./components/navbar";
 import User from "./pages/user";
 import Cart from "./pages/cart";
 import Shop from "./pages/shop";
+import ProductDetails from "./components/productDetails";
 
 // app
 import "./App.css";
@@ -22,6 +23,8 @@ function App() {
         <Routes>
           {/* Home */}
           <Route path="/" element={<Shop />} />
+          {/* Product Details */}
+          <Route path="/products/:id" element={<ProductDetails />} />
           {/* Shopping Cart */}
           <Route path="/cart" element={<Cart />} />
           {/* profile/login/register */}

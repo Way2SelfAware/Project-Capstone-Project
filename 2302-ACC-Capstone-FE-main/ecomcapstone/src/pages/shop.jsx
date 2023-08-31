@@ -2,14 +2,13 @@
 import React from "react";
 // my components
 import AllProducts from "../components/allProducts";
+import "./shopstyle.css";
 
 const Shop = () => {
   return (
     <>
       <div className="shop-page">
-        <div className="products">
           <AllProducts />
-        </div>
       </div>
     </>
   );

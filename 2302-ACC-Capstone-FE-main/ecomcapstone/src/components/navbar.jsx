@@ -1,6 +1,8 @@
 // react hooks
 import React from "react";
 import { Link } from "react-router-dom";
+// my imports
+import "./navbar.css";
 
 const Navbar = () => {
   return (

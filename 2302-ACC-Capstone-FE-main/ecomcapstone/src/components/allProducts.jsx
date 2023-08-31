@@ -45,6 +45,7 @@ const AllProducts = () => {
                 <br />
                 {product.rating.rate}({product.rating.count})
                 <br />${product.price}
+                <button className="add-to-cart-button">Add to Cart</button>
               </p>
             </div>
           </Link>

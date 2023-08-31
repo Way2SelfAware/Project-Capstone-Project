@@ -22,6 +22,7 @@ const Login = (props) => {
       return;
     }
     // API CALL location for future integration
+    // export const userLogin = "https://fakestoreapi.com/auth/login";
     // add token authentication for future integration
     // reset form
     setUsername("");

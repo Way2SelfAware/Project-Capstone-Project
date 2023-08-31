@@ -30,7 +30,7 @@ const ProductDetails = () => {
     return <div>Loading...</div>;
   }
 
-// ADD TO CART FUNCTIONALITY!!!!
+  // ADD TO CART FUNCTIONALITY!!!!
 
   return (
     // display product details
@@ -42,7 +42,7 @@ const ProductDetails = () => {
       </p>
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
-      <button className="add-to-cart-button" onClick={addToCart}>Add to Cart</button>
+      <button className="add-to-cart-button">Add to Cart</button>
       {/* return to shop link */}
       <Link to="/">Back to Shop</Link>
     </div>

@@ -5,20 +5,18 @@
 }
 
 .filter-sort-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 1rem;
     padding: 0 2rem;
 }
 
-.sorting-options,
+.sorting-options {
+    display: flex;
+    flex-direction: row;
+}
+
 .filter-options {
     display: flex;
-    flex-direction: column;
-    /* Adjusted for vertical layout */
-    align-items: flex-start;
-    /* Align items to the start */
+    flex-direction: row;
 }
 
 .sort-options-heading,

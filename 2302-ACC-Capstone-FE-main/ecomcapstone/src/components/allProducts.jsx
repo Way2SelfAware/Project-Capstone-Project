@@ -12,14 +12,28 @@ const AllProducts = () => {
   const [sortOption, setSortOption] = useState("default");
   const [filters, setFilters] = useState({
     minRating: null,
+    minPrice: null,
+    maxPrice: null,
   });
 
   // sorting and filtering
   const sortProducts = (products, option) => {
     let sortedProducts = [...products];
+
+    // filter options
     if (filters.minRating !== null) {
       sortedProducts = sortedProducts.filter(
         (product) => product.rating.rate >= filters.minRating
+      );
+    }
+    if (filters.minPrice !== null) {
+      sortedProducts = sortedProducts.filter(
+        (product) => product.price >= filters.minPrice
+      );
+    }
+    if (filters.maxPrice !== null) {
+      sortedProducts = sortedProducts.filter(
+        (product) => product.price >= filters.maxPrice
       );
     }
 
@@ -57,21 +71,30 @@ const AllProducts = () => {
       <div className="shop-title">
         <h1>Scamazon</h1>
       </div>
+      <br />
       <div className="filter-sort-options">
+        {/* sort options */}
         <div className="sorting-options">
           <h4 className="sort-options-heading">Sort by:</h4>
+          {/* default */}
           <button onClick={() => setSortOption("default")}>Default</button>
+          {/* price L-H */}
           <button onClick={() => setSortOption("priceLowToHigh")}>
             Price Low to High
           </button>
+          {/* price H-L */}
           <button onClick={() => setSortOption("priceHighToLow")}>
             Price High to Low
           </button>
+          {/* rating */}
           <button onClick={() => setSortOption("rating")}>Rating</button>
         </div>
+        {/* filter options */}
         <div className="filter-options">
           <h4 className="filter-options-heading">Filter by:</h4>
+          {/* filter by rating */}
           <label>
+            Minimum Rating:
             <input
               type="number"
               value={filters.minRating === null ? "" : filters.minRating}
@@ -87,6 +110,40 @@ const AllProducts = () => {
             />
           </label>
         </div>
+        {/* filter by min/max price */}
+        <label>
+          Min Price:
+          <input
+            type="number"
+            value={filters.minPrice === null ? "" : filters.minPrice}
+            onChange={(event) =>
+              setFilters({
+                ...filters,
+                minPrice:
+                  event.target.value !== ""
+                    ? parseInt(event.target.value)
+                    : null,
+              })
+            }
+          />
+        </label>
+        {/* max price */}
+        <label>
+          Max Price:
+          <input
+            type="number"
+            value={filters.maxPrice === null ? "" : filters.maxPrice}
+            onChange={(event) =>
+              setFilters({
+                ...filters,
+                maxPrice:
+                  event.target.value !== ""
+                    ? parseInt(event.target.value)
+                    : null,
+              })
+            }
+          />
+        </label>
       </div>
       <div className="products">
         {sortedProducts.map((product) => (

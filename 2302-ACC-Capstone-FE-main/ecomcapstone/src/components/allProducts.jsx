@@ -10,8 +10,20 @@ const AllProducts = () => {
   // state management
   const [allProducts, setAllProducts] = useState([]);
   const [sortOption, setSortOption] = useState("default");
-  // sort options
+  const [filters, setFilters] = useState({
+    minRating: null,
+  });
+
+  // sorting and filtering
   const sortProducts = (products, option) => {
+    let sortedProducts = [...products];
+    if (filters.minRating !== null) {
+      sortedProducts = sortedProducts.filter(
+        (product) => product.rating.rate >= filters.minRating
+      );
+    }
+
+    // sort options
     if (option === "priceLowToHigh") {
       return [...products].sort((a, b) => a.price - b.price);
     } else if (option === "priceHighToLow") {
@@ -19,7 +31,7 @@ const AllProducts = () => {
     } else if (option === "rating") {
       return [...products].sort((a, b) => b.rating.rate - a.rating.rate);
     } else {
-      return products;
+      return sortedProducts;
     }
   };
 
@@ -45,15 +57,36 @@ const AllProducts = () => {
       <div className="shop-title">
         <h1>Scamazon</h1>
       </div>
-      <div className="sorting-options">
-        <button onClick={() => setSortOption("default")}>Default</button>
-        <button onClick={() => setSortOption("priceLowToHigh")}>
-          Price Low to High
-        </button>
-        <button onClick={() => setSortOption("priceHighToLow")}>
-          Price High to Low
-        </button>
-        <button onClick={() => setSortOption("rating")}>Rating</button>
+      <div className="filter-sort-options">
+        <div className="sorting-options">
+          <h4 className="sort-options-heading">Sort by:</h4>
+          <button onClick={() => setSortOption("default")}>Default</button>
+          <button onClick={() => setSortOption("priceLowToHigh")}>
+            Price Low to High
+          </button>
+          <button onClick={() => setSortOption("priceHighToLow")}>
+            Price High to Low
+          </button>
+          <button onClick={() => setSortOption("rating")}>Rating</button>
+        </div>
+        <div className="filter-options">
+          <h4 className="filter-options-heading">Filter by:</h4>
+          <label>
+            <input
+              type="number"
+              value={filters.minRating === null ? "" : filters.minRating}
+              onChange={(event) =>
+                setFilters({
+                  ...filters,
+                  minRating:
+                    event.target.value !== ""
+                      ? parseInt(event.target.value)
+                      : null,
+                })
+              }
+            />
+          </label>
+        </div>
       </div>
       <div className="products">
         {sortedProducts.map((product) => (

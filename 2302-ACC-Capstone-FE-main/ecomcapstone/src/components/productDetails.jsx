@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 //my imports
 import { getSingleProduct } from "../API/apiEndpoints";
+import "./productDetails.css";
 
 const ProductDetails = () => {
   // hook management
@@ -37,10 +38,10 @@ const ProductDetails = () => {
     <div className="product-details">
       <h2>{product.title}</h2>
       <img src={product.image} alt={product.title}></img>
-      <p>
+      <p className="product-rating">
         {product.rating.rate}({product.rating.count})
       </p>
-      <p>{product.description}</p>
+      <p className="product-description">{product.description}</p>
       <p>Price: ${product.price}</p>
       <button className="add-to-cart-button">Add to Cart</button>
       {/* return to shop link */}
